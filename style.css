@@ -1,129 +1,199 @@
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: black;
-    color: white;
-    text-align: center;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
 }
 
-header {
+body {
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: black;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
-nav ul {
-    list-style: none;
+.nav-links {
     display: flex;
-    gap: 20px;
-    padding: 0;
-    position: relative;
+    gap: 2rem;
+    align-items: center;
 }
 
-nav ul li {
-    position: relative;
-}
-
-nav ul li a {
+.nav-links a {
+    color: #fff;
     text-decoration: none;
-    color: white;
-    font-size: 16px;
-    padding: 10px;
-    display: block;
+    font-size: 0.9rem;
 }
 
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #222;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    top: 100%;
-    left: 0;
-    min-width: 150px;
-    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
 }
 
-.dropdown-menu li {
-    display: block;
-    width: 100%;
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
 }
 
-.dropdown-menu li a {
-    padding: 10px;
-    display: block;
-    color: white;
-    text-align: left;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-.header-buttons button {
-    background-color: blue;
+.btn-primary {
+    background-color: #0070f3;
     color: white;
     border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 14px;
-    border-radius: 5px;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: none;
 }
 
 .hero {
-    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
 }
 
 .hero h1 {
-    font-size: 48px;
-    font-weight: bold;
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
 }
 
 .hero p {
-    font-size: 18px;
+    font-size: 1.2rem;
+    color: #888;
     max-width: 600px;
-    margin: 20px auto;
+    margin-bottom: 2rem;
 }
 
-.cta {
-    background-color: blue;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 5px;
+.portfolio-images {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
 }
-
-.portfolio-samples {
+/* Floating Images Section - Improved */
+.portfolio-images {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
     display: flex;
     justify-content: center;
-    gap: 20px;
-    padding: 50px 0;
-    flex-wrap: wrap;
+    align-items: center;
 }
 
-.portfolio-samples img {
-    width: 250px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s ease-in-out;
+.floating-image {
+    position: absolute;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    max-width: 280px;
+    transition: transform 0.5s ease-in-out;
 }
 
-.portfolio-samples img:hover {
-    transform: scale(1.05);
+/* Animation for floating effect */
+/* Floating Images Section - Improved */
+.portfolio-images {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
 }
 
-footer {
-    padding: 20px;
-    background-color: black;
+.floating-image {
+    position: absolute;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    max-width: 280px;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Animation for floating effect */
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.floating-image {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Keep images at corners */
+.image-1 {
+    top:10%;
+    left: 5%;
+    transform: rotate(-8deg);
+}
+
+.image-2 {
+    bottom: 5%;
+    left: 5%;
+    transform: rotate(5deg);
+}
+
+.image-3 {
+    top: 10%;
+    right: 5%;
+    transform: rotate(8deg);
+}
+
+.image-4 {
+    bottom: 5%;
+    right: 5%;
+    transform: rotate(-5deg);
+}
+
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .floating-image {
+        max-width: 150px;
+    }
+
+    .nav-buttons {
+        display: none;
+    }
+
+    .navbar {
+        justify-content: center;
+    }
 }
