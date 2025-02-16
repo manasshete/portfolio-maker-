@@ -52,6 +52,7 @@ p {
     padding: 40px;
     margin: 20px auto;
     border-radius: 8px;
+    max-width: 750px;
 }
 
 .creative-section h2 {
