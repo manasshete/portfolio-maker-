@@ -46,7 +46,8 @@ p {
 
 /* Creative Section */
 .creative-section {
-    background-color: #007BFF;
+    background-color:lightblue;
+    background: linear-gradient(135deg, #12c2e9, #c471ed, #f64f59);
     color: white;
     text-align: center;
     padding: 40px;
