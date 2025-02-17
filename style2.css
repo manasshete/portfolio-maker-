@@ -57,6 +57,7 @@
 .marquee-content {
     display: flex;
     gap: 20px;
+    animation: scroll 50s linear infinite;
 }
 
 .marquee img {
